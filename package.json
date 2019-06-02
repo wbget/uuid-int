@@ -1,0 +1,35 @@
+{
+  "name": "uuid-int",
+  "version": "1.0.0",
+  "description": "uuid-int for nodejs",
+  "main": "addon.js",
+  "scripts": {
+    "test": "node test.js",
+    "build": "node-gyp rebuild"
+  },
+  "keywords": [
+    "uuid-int",
+    "snowflake",
+    "uuid",
+    "int",
+    "integer"
+  ],
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "author": "wbget",
+  "license": "MIT",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^1.6.3"
+  },
+  "homepage": "https://github.com/wbget/uuid-int",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wbget/uuid-int"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0"
+  },
+  "gypfile": true
+}
