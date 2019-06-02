@@ -1,12 +1,19 @@
 const assert = require('assert');
 const UUID = require('./addon');
 
-assert.throws(() => UUID(), Error);
-assert.throws(() => UUID(-1), Error);
-assert.throws(() => UUID(512), Error);
-assert.throws(() => UUID('28'), Error);
+assert.throws(() => UUID(), Error, 'need id');
+assert.throws(() => UUID(-1), Error, 'id out of range');
+assert.throws(() => UUID(512), Error, 'id out of range');
+assert.throws(() => UUID('28'), Error, 'id must be number');
+assert.throws(() => UUID(2, Date.now() / 1000 + 1), Error, 'seed out of range');
+assert.throws(() => UUID(2, -1), Error, 'seed out of range');
+assert.throws(() => UUID(2, '392'), Error, 'seed must be number');
+
+const t0 = UUID(0, Date.now() / 1000);
+assert(t0.uuid() === 0x200000);
 
 const t1 = UUID(1);
+console.log(t1.uuid());
 const t2 = UUID(2);
 assert(t1.id === 1);
 assert(t2.id === 2);
@@ -36,4 +43,3 @@ for (let i = 0; i < 10000; i++) {
   }
 }
 assert(catchError);
-console.log(t1.uuid());

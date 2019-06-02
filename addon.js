@@ -1,3 +1,3 @@
 var Generator = require('bindings')('addon.node');
 
-module.exports = Generator;
+module.exports = (id, seed = 0) => Generator(id, seed);

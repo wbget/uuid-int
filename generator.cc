@@ -28,6 +28,7 @@ Generator::Generator(const Napi::CallbackInfo &info) : Napi::ObjectWrap<Generato
     Napi::HandleScope scope(env);
 
     this->id_ = info[0].As<Napi::Number>().Int32Value();
+    this->seed_ = info[1] ? info[1].As<Napi::Number>().Int32Value() : 0;
     this->next();
 };
 
@@ -38,14 +39,15 @@ void Generator::next()
 }
 int Generator::now()
 {
-    return time(0);
+    return time(0) - this->seed_;
 }
 
-Napi::Object Generator::NewInstance(Napi::Env env, Napi::Value arg)
+Napi::Object Generator::NewInstance(Napi::Env env, Napi::Value id, Napi::Value seed)
 {
     Napi::EscapableHandleScope scope(env);
-    Napi::Object obj = constructor.New({arg});
-    obj.Set(Napi::String::New(env, "id"), arg);
+    Napi::Object obj = constructor.New({id, seed});
+    obj.Set(Napi::String::New(env, "id"), id);
+    obj.Set(Napi::String::New(env, "seed"), seed);
     return scope.Escape(napi_value(obj)).ToObject();
 }
 Napi::Value Generator::UUID(const Napi::CallbackInfo &info)
