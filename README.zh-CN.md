@@ -18,11 +18,11 @@ const UUID = require('uuid-int');
 // 设定一个int类型的id, 范围在 [0, 511]之间
 const id = 0;
 
-// 使用id初始化发号器
-const one = UUID(id);
+// 使用id初始化
+const generator = UUID(id);
 
 // 生成
-const uuid = one.uuid();
+const uuid = generator.uuid();
 console.log(uuid); // 3270411116609537
 ```
 
