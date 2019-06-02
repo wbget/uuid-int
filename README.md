@@ -1,6 +1,8 @@
 # uuid-int
 
-uuid-int for nodejs
+uuid-int for nodejs . 
+
+[中文](./README.zh-CN.md)
 
 ## Quick Start
 
