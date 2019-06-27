@@ -1,11 +1,9 @@
 #include <napi.h>
 #include <ctime>
-// #include <iostream>
 
 #include "generator.h"
 
 using namespace Napi;
-// using namespace std;
 
 Napi::FunctionReference Generator::constructor;
 
@@ -52,7 +50,6 @@ Napi::Object Generator::NewInstance(Napi::Env env, Napi::Value id, Napi::Value s
 }
 Napi::Value Generator::UUID(const Napi::CallbackInfo &info)
 {
-    // 32位时间+9位标示+12位自增 = 53位
     Napi::Env env = info.Env();
     time_t now = this->now();
     if (now < this->nextTime_)
@@ -73,7 +70,6 @@ Napi::Value Generator::UUID(const Napi::CallbackInfo &info)
     uint64_t count = this->counter_ & 0xFFF;
     uint64_t uuid = time + id + count;
 
-    // cout << this->nextTime_ << ',' << time << ',' << id << ',' << count << ',' << endl;
     this->counter_++;
     Napi::Number result = Napi::Number::New(env, uuid);
     return result;
