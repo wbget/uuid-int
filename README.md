@@ -24,13 +24,20 @@ uuid-int for nodejs .
 
 ## Quick Start
 
-Install
+__Install__
 
 ```
 npm install --save uuid-int
 ```
 
-Use
+__Windows install__
+
+```
+npm install --global --production windows-build-tools
+npm install --save uuid-int
+```
+
+__Use__
 
 ```
 const UUID = require('uuid-int');

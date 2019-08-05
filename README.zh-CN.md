@@ -9,7 +9,11 @@ uuid-int for nodejs
 ```
 npm install --save uuid-int
 ```
-
+windows下安装
+```
+npm install --global --production windows-build-tools
+npm install --save uuid-int
+```
 使用
 
 ```
