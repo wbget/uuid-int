@@ -8,3 +8,4 @@ run/
 *.swp
 build/
 .vscode/
+node-addon-examples/
