@@ -1,9 +1,6 @@
 #include "myobject.h"
 #include <assert.h>
-#include <iostream>
 #include <ctime>
-
-using namespace std;
 
 MyObject::MyObject() : env_(nullptr), wrapper_(nullptr) {}
 
@@ -55,11 +52,9 @@ napi_value MyObject::New(napi_env env, napi_callback_info info)
 
     status = napi_get_value_int32(env, args[0], &obj->id_);
     assert(status == napi_ok);
-    cout << obj->id_ << endl;
 
     status = napi_get_value_int32(env, args[1], &obj->seed_);
     assert(status == napi_ok);
-    cout << obj->seed_ << endl;
     obj->next();
 
     obj->env_ = env;
