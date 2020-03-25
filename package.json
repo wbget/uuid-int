@@ -28,7 +28,9 @@
     "url": "https://github.com/wbget/uuid-int"
   },
   "devDependencies": {
-    "assert": "^2.0.0"
+    "assert": "^2.0.0",
+    "power-assert": "^1.6.1",
+    "uuid-int": "^2.0.1"
   },
   "gypfile": true
 }
