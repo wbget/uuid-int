@@ -4,8 +4,7 @@
   "description": "uuid-int for nodejs",
   "main": "addon.js",
   "scripts": {
-    "test": "node test.js",
-    "build": "node-gyp rebuild"
+    "test": "node test.js"
   },
   "keywords": [
     "uuid-int",
@@ -19,18 +18,14 @@
   },
   "author": "wbget",
   "license": "MIT",
-  "dependencies": {
-    "bindings": "^1.5.0"
-  },
+  "dependencies": {},
   "homepage": "https://github.com/wbget/uuid-int",
   "repository": {
     "type": "git",
     "url": "https://github.com/wbget/uuid-int"
   },
   "devDependencies": {
-    "assert": "^2.0.0",
-    "power-assert": "^1.6.1",
-    "uuid-int": "^2.0.1"
+    "power-assert": "^1.6.1"
   },
   "gypfile": true
 }
