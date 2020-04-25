@@ -30,13 +30,6 @@ __Install__
 npm install --save uuid-int
 ```
 
-__Windows install__
-
-```
-npm install --global --production windows-build-tools
-npm install --save uuid-int
-```
-
 __Use__
 
 ```
