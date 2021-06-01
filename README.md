@@ -18,7 +18,7 @@
 
 # uuid-int
 
-inspired by snowflake. 
+*inspired by snowflake.*   
 uuid-int for nodejs .
 
 [中文](./README.zh-CN.md)
