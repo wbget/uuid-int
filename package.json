@@ -2,7 +2,7 @@
   "name": "uuid-int",
   "version": "3.0.3",
   "description": "uuid-int for nodejs",
-  "main": "addon.js",
+  "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
